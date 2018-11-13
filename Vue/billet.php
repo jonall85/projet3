@@ -16,7 +16,7 @@
 
 		<h3>
 
-			<?php echo $billet['titre']; ?>
+			<?php echo htmlspecialchars($billet['titre']); ?>
 
 		</h3>
 
@@ -28,7 +28,7 @@
 
 			<br />
 
-			Créer le : <?php echo $billet['date']; ?>
+			Créer le : <?php echo htmlspecialchars($billet['date']); ?>
 		</p>
 		
 		
@@ -40,16 +40,16 @@
 		
 			<p class="afficherCommentaire">
 
-				<?php echo $commentaire['auteur']; ?>
+				<?php echo htmlspecialchars($commentaire['auteur']); ?>
 
 				<br />
 
-				<?php echo $commentaire['contenu']; ?>
+				<?php echo htmlspecialchars($commentaire['contenu']); ?>
 			
 				<br />
 			
-				Créer le : <?php echo $commentaire['date']; ?> <br />
-				<a href="Controlleur/commentaire_C.php?set=signalC&amp;idCom=<?php echo $commentaire['id'];?>&amp;page=<?php echo $idB;?>"> Signaler le commentaire </a>
+				Créer le : <?php echo htmlspecialchars($commentaire['date']); ?> <br />
+				<a href="Controlleur/commentaire_C.php?set=signalC&amp;idCom=<?php echo htmlspecialchars($commentaire['id']);?>&amp;page=<?php echo htmlspecialchars($idB);?>"> Signaler le commentaire </a>
 			</p>
 			
 			
@@ -61,7 +61,7 @@
 		
 		<div class="addCommentaire">
 			<form method="post" action="Controlleur/commentaire_C.php?set=addC">
-				<input type="hidden" name="id_B" id="id_B" value=<?php echo $idB ?> ></input>
+				<input type="hidden" name="id_B" id="id_B" value=<?php echo htmlspecialchars($idB); ?> ></input>
 				<h3> Votre nom : </h3>
 				<p><input type="text" name="auteur_commentaire" id="auteur_commentaire" size="20"></input></p>
 				<h3> Votre commentaire : </h3>
