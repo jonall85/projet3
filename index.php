@@ -35,9 +35,9 @@ if(isset($_GET['action']))
 		setConnexion();
 	}
 	
-	elseif($_GET['action'] == "contact")
+	else
 	{
-		contact();
+		accueil();
 	}
 }
 
