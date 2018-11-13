@@ -25,7 +25,7 @@
 			<ul>
 				<li> <a href="index.php"> Accueil </a></li>
 				<li> <a href="index.php?action=list"> Roman </a></li>
-				<li> <a href="Controller_contact.php"> Contact </a></li>
+				<li> href="mailto:jonall85@gmail.com"> Contact </a></li>
 			</ul>
 		</nav>
 	
