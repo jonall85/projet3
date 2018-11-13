@@ -22,10 +22,7 @@ if(isset($_GET['action']))
 
 	elseif($_GET['action'] == "backend")
 	{
-		$pseudoConnect= $_GET['pseudo'];
-		$passConnect= $_GET['pass'];
-
-		backend($pseudoConnect, $passConnect);
+		backend();
 	}
 
 	elseif($_GET['action'] == "backendU")
@@ -33,6 +30,11 @@ if(isset($_GET['action']))
 		backendUpdate();
 	}
 
+	elseif($_GET['action'] == "connect")
+	{
+		setConnexion();
+	}
+	
 	elseif($_GET['action'] == "contact")
 	{
 		contact();
