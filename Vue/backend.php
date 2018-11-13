@@ -28,9 +28,9 @@
 		
 			<p>
 
-				<a href="index.php?action=billet&amp;page=<?php echo $billet['id'];?>"> Billet n°<?php echo $billet['id']; ?> - <?php echo $billet['titre']; ?> </a>
-				<a href="Controlleur/billet_C.php?set=delB&amp;idBillet=<?php echo $billet['id'];?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le billet" /> </a>
-				<a href="index.php?action=backendU&amp;idBillet=<?php echo $billet['id'];?>"> <img src="screen/update_icon.png" alt="modifier" title="Modifier le billet" /> </a>
+				<a href="index.php?action=billet&amp;page=<?php echo $billet['id'];?>"> Billet n°<?php echo htmlspecialchars($billet['id']); ?> - <?php echo htmlspecialchars($billet['titre']); ?> </a>
+				<a href="Controlleur/billet_C.php?set=delB&amp;idBillet=<?php echo htmlspecialchars($billet['id']);?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le billet" /> </a>
+				<a href="index.php?action=backendU&amp;idBillet=<?php echo htmlspecialchars($billet['id']);?>"> <img src="screen/update_icon.png" alt="modifier" title="Modifier le billet" /> </a>
 			
 			</p>
 	
@@ -55,7 +55,7 @@
 		
 				<p>
 
-					<span class="Signaler"><?php echo $commentaire['auteur']; ?> </span> : <?php echo $commentaire['contenu']; ?> - envoyé le <?php echo $commentaire['date']; ?>
+					<span class="Signaler"><?php echo htmlspecialchars($commentaire['auteur']); ?> </span> : <?php echo htmlspecialchars($commentaire['contenu']); ?> - envoyé le <?php echo htmlspecialchars($commentaire['date']); ?>
 					<a href="Controlleur/commentaire_C.php?set=deleteC&amp;idCom=<?php echo $commentaire['id'];?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le commentaire" /> </a>
 				</p>
 			
@@ -82,8 +82,8 @@
 		
 				<p>
 
-					<span class="nonSignaler"><?php echo $commentaire['auteur']; ?> </span> : <?php echo $commentaire['contenu']; ?> - envoyé le <?php echo $commentaire['date']; ?>
-					<a href="Controlleur/commentaire_C.php?set=deleteC&amp;idCom=<?php echo $commentaire['id'];?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le commentaire" /> </a>
+					<span class="nonSignaler"><?php echo htmlspecialchars($commentaire['auteur']); ?> </span> : <?php echo htmlspecialchars($commentaire['contenu']); ?> - envoyé le <?php echo htmlspecialchars($commentaire['date']); ?>
+					<a href="Controlleur/commentaire_C.php?set=deleteC&amp;idCom=<?php echo htmlspecialchars($commentaire['id']);?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le commentaire" /> </a>
 				</p>
 			
 			<?php
