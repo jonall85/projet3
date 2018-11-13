@@ -12,7 +12,7 @@
 
 		<p>
 
-			 <a href="index.php?action=billet&amp;page=<?php echo $billet['id'];?>"> Billet n° <?php echo $billet['id'];?> - <?php echo $billet['titre'];?> </a>
+			 <a href="index.php?action=billet&amp;page=<?php echo htmlspecialchars($billet['id']);?>"> Billet n° <?php echo htmlspecialchars($billet['id']);?> - <?php echo htmlspecialchars($billet['titre']);?> </a>
 
 			<br />
 
