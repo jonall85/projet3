@@ -60,10 +60,6 @@ function billet()
 }
 
 
-function contact()
-{
-	require('Vue/contact.php');
-}
 
 
 
