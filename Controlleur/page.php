@@ -66,15 +66,31 @@ function contact()
 }
 
 
+
 /* Backend  */
 
-function backend($pseudoCo, $passCo)
+function backend()
 {
-	$pseudoConnect=$pseudoCo;
-	$passConnect=$passCo;
+		
+	session_start();
 
-	if($pseudoConnect == 'jean' && $passConnect == '123456')
+	$pseudo = 'jeanF';
+	$pass = '123456';
+
+	if(!isset($_SESSION['_login']) || !isset($_SESSION['_pass']))
 	{
+		header('location: index.php?action=connect');
+	}
+
+	else
+	{
+		if(($pseudo != $_SESSION['_login']) || ($pass != $_SESSION['_pass']))
+		{
+			header('location: index.php?action=connect');
+		}
+	}
+
+
 
 		$getBillet_backend = new Billet(); 
 		$billets_backend = $getBillet_backend->get_Billet();
@@ -113,13 +129,8 @@ function backend($pseudoCo, $passCo)
 
 		require('Vue/backend.php');
 
-	}
-
-	else
-	{
-			header('location: ../index.php');
-		}
-}
+}		
+		
 
 
 function backendUpdate()
