@@ -35,7 +35,7 @@ include('Vue/header.php'); ?>
 	 
 		<h3>
 
-			<?php echo $billet['titre']; ?>
+			<?php echo htmlspecialchars($billet['titre']); ?>
 
 		</h3>
 
@@ -47,7 +47,7 @@ include('Vue/header.php'); ?>
 
 			<br />
 
-			Créer le : <?php echo $billet['date']; ?>
+			Créer le : <?php echo htmlspecialchars($billet['date']); ?>
 		</p>
 	
 	
