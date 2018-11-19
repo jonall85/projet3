@@ -85,6 +85,11 @@ if(isset($_GET['action']))
 	{
 		$fonction->signalerCommentaire();
 	}
+	
+	elseif($_GET['action'] == "désignalC")
+	{
+		$fonction->annulerSignalerCommentaire();
+	}
 
 	else
 	{
