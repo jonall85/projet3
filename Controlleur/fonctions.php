@@ -2,15 +2,24 @@
 
 require_once('Model/billet_M.php');
 require_once('Model/commentaire_M.php');
+require_once('Controlleur/connexion.php');
 
 
 class fonctions {
+	
+	private function testCo(){
+		$test_Co = new connexion;
+		return $test_Co;
+	}
 	
 	/* Fonction des billets */
 
 	public function addBillet()
 	{
 
+		$test_Co = $this->testCo();
+		$test = $test_Co->testConnexion();
+		
 		$titreB = $_POST['titre_billet'];
 		$contenuB = $_POST['contenu_billet'];
 	
@@ -24,7 +33,9 @@ class fonctions {
 	public function deleteBillet()
 	{
 		
-
+		$test_Co = $this->testCo();
+		$test = $test_Co->testConnexion();
+		
 		$setSuppBillet = new Billet(); 
 		$comSupprimer = $setSuppBillet->get_supBillet($_GET['idBillet']);
 
@@ -35,6 +46,9 @@ class fonctions {
 	public function updateBillet()
 	{
 
+		$test_Co = $this->testCo();
+		$test = $test_Co->testConnexion();
+		
 		$idBilletU = $_POST['id_B'];
 		$titreU = $_POST['titre_billet'];
 		$contenuU = $_POST['contenu_billet'];
@@ -65,6 +79,9 @@ class fonctions {
 	public function deleteCommentaire()
 	{
 
+		$test_Co = $this->testCo();
+		$test = $test_Co->testConnexion();
+		
 		$setSuppCom = new commentaire(); 
 		$comSupprimer = $setSuppCom->get_supCommentaire($_GET['idCom']);
 
