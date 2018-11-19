@@ -106,7 +106,7 @@ class pages {
 
 				$commentaires_signaler[$cle]['auteur'] = ($commentaire['auteur']);
 
-				$commentaires_all[$cle]['contenu'] = ($commentaire['contenu']);
+				$commentaires_signaler[$cle]['contenu'] = ($commentaire['contenu']);
 
 			}
 
