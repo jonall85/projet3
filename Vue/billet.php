@@ -49,7 +49,7 @@
 				<br />
 			
 				Créer le : <?php echo htmlspecialchars($commentaire['date']); ?> <br />
-				<a href="Controlleur/commentaire_C.php?action=signalC&amp;idCom=<?php echo htmlspecialchars($commentaire['id']);?>&amp;page=<?php echo htmlspecialchars($idB);?>"> Signaler le commentaire </a>
+				<a href="index.php?action=signalC&amp;idCom=<?php echo htmlspecialchars($commentaire['id']);?>&amp;page=<?php echo htmlspecialchars($idB);?>"> Signaler le commentaire </a>
 			</p>
 			
 			
@@ -60,7 +60,7 @@
 		?>
 		
 		<div class="addCommentaire">
-			<form method="post" action="Controlleur/commentaire_C.php?action=addC">
+			<form method="post" action="index.php?action=addC">
 				<input type="hidden" name="id_B" id="id_B" value=<?php echo htmlspecialchars($idB); ?> ></input>
 				<h3> Votre nom : </h3>
 				<p><input type="text" name="auteur_commentaire" id="auteur_commentaire" size="20"></input></p>
