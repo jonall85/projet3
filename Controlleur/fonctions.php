@@ -96,6 +96,18 @@ class fonctions {
 
 		header('location: index.php?action=billet&page=' . $_GET['page'] . ' ');
 	}
+	
+	public function annulerSignalerCommentaire()
+	{
+		
+		$test_Co = $this->testCo();
+		$test = $test_Co->testConnexion();
+
+		$setAnnulerSignaler = new commentaire(); 
+		$signalAnnuler = $setAnnulerSignaler->annulerSignalement_commentaire($_GET['idCom']);
+
+		header('location: index.php?action=backend');
+	}
 }
 
 
