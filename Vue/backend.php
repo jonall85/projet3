@@ -29,7 +29,7 @@
 			<p>
 
 				<a href="index.php?action=billet&amp;page=<?php echo $billet['id'];?>"> Billet n°<?php echo htmlspecialchars($billet['id']); ?> - <?php echo htmlspecialchars($billet['titre']); ?> </a>
-				<a href="Controlleur/billet_C.php?set=delB&amp;idBillet=<?php echo htmlspecialchars($billet['id']);?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le billet" /> </a>
+				<a href="Controlleur/billet_C.php?action=delB&amp;idBillet=<?php echo htmlspecialchars($billet['id']);?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le billet" /> </a>
 				<a href="index.php?action=backendU&amp;idBillet=<?php echo htmlspecialchars($billet['id']);?>"> <img src="screen/update_icon.png" alt="modifier" title="Modifier le billet" /> </a>
 			
 			</p>
@@ -56,7 +56,7 @@
 				<p>
 
 					<span class="Signaler"><?php echo htmlspecialchars($commentaire['auteur']); ?> </span> : <?php echo htmlspecialchars($commentaire['contenu']); ?> - envoyé le <?php echo htmlspecialchars($commentaire['date']); ?>
-					<a href="Controlleur/commentaire_C.php?set=deleteC&amp;idCom=<?php echo $commentaire['id'];?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le commentaire" /> </a>
+					<a href="Controlleur/commentaire_C.php?action=delC&amp;idCom=<?php echo $commentaire['id'];?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le commentaire" /> </a>
 				</p>
 			
 			<?php
@@ -83,7 +83,7 @@
 				<p>
 
 					<span class="nonSignaler"><?php echo htmlspecialchars($commentaire['auteur']); ?> </span> : <?php echo htmlspecialchars($commentaire['contenu']); ?> - envoyé le <?php echo htmlspecialchars($commentaire['date']); ?>
-					<a href="Controlleur/commentaire_C.php?set=deleteC&amp;idCom=<?php echo htmlspecialchars($commentaire['id']);?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le commentaire" /> </a>
+					<a href="Controlleur/commentaire_C.php?action=delC&amp;idCom=<?php echo htmlspecialchars($commentaire['id']);?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le commentaire" /> </a>
 				</p>
 			
 			<?php
