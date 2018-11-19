@@ -1,5 +1,6 @@
 <?php
 
+
 require('Controlleur/page.php');
 require('Controlleur/fonctions.php');
 require_once('Controlleur/connexion.php');
@@ -7,45 +8,49 @@ require_once('Controlleur/connexion.php');
 
 $fonction = new fonctions;
 $connexions = new connexion;
+$page = new pages;
+
+
 
 if(isset($_GET['action']))
 {
 
+	/* appel des pages du site */
+
 	if($_GET['action'] == 'list')
 	{
-		billetList();
+		$page->billetList();
 	}
 
 	elseif($_GET['action'] == "billet")
 	{
-		billet();
-	}
-
-	elseif($_GET['action'] == "connect")
-	{
-		setConnexion();
+		$page->billet();
 	}
 
 	elseif($_GET['action'] == "backend")
 	{
-		backend();
+		$page->backend();
 	}
 
 	elseif($_GET['action'] == "backendU")
 	{
-		backendUpdate();
+		$page->backendUpdate();
 	}
+
+
+	/* Fonction de connexion */
 
 	elseif($_GET['action'] == "connect")
 	{
-		getConnexion();
+		$page->getConnexion();
 	}
-	
+
 	elseif($_GET['action'] == "setCo")
 	{
 		$connexions->setConnexion();
 	}
-	
+
+
 	/* Fonction des billets */
 
 	elseif($_GET['action'] == "delB")
@@ -80,16 +85,17 @@ if(isset($_GET['action']))
 	{
 		$fonction->signalerCommentaire();
 	}
-	
+
 	else
 	{
-		accueil();
+		$page->accueil();
 	}
+
 }
 
 else
 {
-	accueil();
+	$page->accueil();
 }
 
 
