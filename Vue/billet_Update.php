@@ -8,7 +8,7 @@ include('Vue/header-backend.php');
 	
 	<section class="backend">
 	
-		<form method="post" action="Controlleur/billet_C.php?set=updateB">
+		<form method="post" action="index.php?action=updateB">
 			<input type="hidden" name="id_B" id="id_B" value=<?php echo $billet['id']; ?> ></input>
 			<h2> Titre du billet : </h2>
 			<p><input type="text" name="titre_billet" id="titre_billet" value=<?php echo $billet['titre']; ?> size="80"></input></p>
