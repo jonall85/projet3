@@ -70,6 +70,13 @@ class Commentaire
 	}
 	
 	
+	public function annulerSignalement_commentaire($idSignaler)
+	{
+		$db = $this->connectDB();
+		$req = $db->prepare('UPDATE commentaire SET signaler = 0 WHERE id = ?');
+		$req->execute(array($idSignaler));
+	}
+	
 	
 	public function get_supCommentaire($get_idSupp)
 	{
