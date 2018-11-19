@@ -1,6 +1,10 @@
 <?php
 
 require('Controlleur/page.php');
+require('Controlleur/fonctions.php');
+
+
+$fonction = new fonctions;
 
 if(isset($_GET['action']))
 {
@@ -33,6 +37,41 @@ if(isset($_GET['action']))
 	elseif($_GET['action'] == "connect")
 	{
 		setConnexion();
+	}
+	
+	/* Fonction des billets */
+
+	elseif($_GET['action'] == "delB")
+	{
+		$fonction->deleteBillet();
+	}
+
+	elseif($_GET['action'] == "addB")
+	{
+		$fonction->addBillet();
+	}
+
+	elseif($_GET['action'] == "updateB")
+	{
+		$fonction->updateBillet();
+	}
+	
+
+	/* Fonction des commentaires */
+
+	elseif($_GET['action'] == "addC")
+	{
+		$fonction->addCommentaire();
+	}
+
+	elseif($_GET['action'] == "delC")
+	{
+		$fonction->deleteCommentaire();
+	}
+
+	elseif($_GET['action'] == "signalC")
+	{
+		$fonction->signalerCommentaire();
 	}
 	
 	else
