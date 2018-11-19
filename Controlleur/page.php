@@ -1,10 +1,14 @@
 <?php
 
-
 require('Model/billet_M.php');
 require('Model/commentaire_M.php');
+require_once('Controlleur/connexion.php');
 
 
+function testCo(){
+	$test_Co = new connexion;
+	return $test_Co;
+}
 
 function billetList()
 {
@@ -61,31 +65,12 @@ function billet()
 
 
 
-
-
 /* Backend  */
 
 function backend()
 {
-		
-	session_start();
-
-	$pseudo = 'jeanF';
-	$pass = '123456';
-
-	if(!isset($_SESSION['_login']) || !isset($_SESSION['_pass']))
-	{
-		header('location: index.php?action=connect');
-	}
-
-	else
-	{
-		if(($pseudo != $_SESSION['_login']) || ($pass != $_SESSION['_pass']))
-		{
-			header('location: index.php?action=connect');
-		}
-	}
-
+		$test_Co = testCo();
+		$test = $test_Co->testConnexion();
 
 
 		$getBillet_backend = new Billet(); 
@@ -125,13 +110,15 @@ function backend()
 
 		require('Vue/backend.php');
 
-}		
-		
+}
 
 
 function backendUpdate()
 {
 	
+	$test_Co = testCo();
+	$test = $test_Co->testConnexion();
+
 	$getUpdateBillet = new Billet(); 
 	$getUpdateBillets = $getUpdateBillet->get_Billets($_GET['idBillet']);
 	
@@ -173,10 +160,19 @@ function accueil()
 
 /* Connexion à la page d'administration  */
 
-function setConnexion()
+function getConnexion()
 {
 	require('Vue/connexion.php');
 }
 
 
+
 ?>
+
+
+
+
+	
+
+	
+
