@@ -2,9 +2,11 @@
 
 require('Controlleur/page.php');
 require('Controlleur/fonctions.php');
+require_once('Controlleur/connexion.php');
 
 
 $fonction = new fonctions;
+$connexions = new connexion;
 
 if(isset($_GET['action']))
 {
@@ -36,7 +38,12 @@ if(isset($_GET['action']))
 
 	elseif($_GET['action'] == "connect")
 	{
-		setConnexion();
+		getConnexion();
+	}
+	
+	elseif($_GET['action'] == "setCo")
+	{
+		$connexions->setConnexion();
 	}
 	
 	/* Fonction des billets */
