@@ -56,7 +56,8 @@
 				<p>
 
 					<span class="Signaler"><?php echo htmlspecialchars($commentaire['auteur']); ?> </span> : <?php echo htmlspecialchars($commentaire['contenu']); ?> - envoyé le <?php echo htmlspecialchars($commentaire['date']); ?>
-					<a href="index.php?action=delC&amp;idCom=<?php echo $commentaire['id'];?>"> <img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le commentaire" /> </a>
+					<a href="index.php?action=delC&amp;idCom=<?php echo $commentaire['id'];?>"><img src="screen/delete_icon.png" alt="supprimer" title="Supprimer le commentaire" /></a>
+					<a href="index.php?action=désignalC&amp;idCom=<?php echo $commentaire['id'];?>"><img src="screen/designal_icon.png" alt="supprimer" title="Annuler le signalement" /></a>
 				</p>
 			
 			<?php
