@@ -4,10 +4,11 @@ require_once('Model/billet_M.php');
 require_once('Model/commentaire_M.php');
 
 
-
+class fonctions {
+	
 	/* Fonction des billets */
 
-	function addBillet()
+	public function addBillet()
 	{
 
 		$titreB = $_POST['titre_billet'];
@@ -20,7 +21,7 @@ require_once('Model/commentaire_M.php');
 	}
 
 
-	function deleteBillet()
+	public function deleteBillet()
 	{
 		
 
@@ -31,7 +32,7 @@ require_once('Model/commentaire_M.php');
 	}
 
 
-	function updateBillet()
+	public function updateBillet()
 	{
 
 		$idBilletU = $_POST['id_B'];
@@ -47,7 +48,7 @@ require_once('Model/commentaire_M.php');
 
 	/* Fonction des commentaires */
 
-	function addCommentaire()
+	public function addCommentaire()
 	{
 
 		$auteurC = $_POST['auteur_commentaire'];
@@ -61,7 +62,7 @@ require_once('Model/commentaire_M.php');
 	}
 
 
-	function deleteCommentaire()
+	public function deleteCommentaire()
 	{
 
 		$setSuppCom = new commentaire(); 
@@ -71,13 +72,14 @@ require_once('Model/commentaire_M.php');
 	}
 
 
-	function signalerCommentaire()
+	public function signalerCommentaire()
 	{
 		$setSignaler = new commentaire(); 
 		$comSignaler = $setSignaler->signalement_commentaire($_GET['idCom']);
 
 		header('location: index.php?action=billet&page=' . $_GET['page'] . ' ');
 	}
+}
 
 
 
